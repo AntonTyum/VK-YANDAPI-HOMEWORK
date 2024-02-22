@@ -25,7 +25,6 @@ while not user_id.isdigit():
     user_id = input('Введите ID пользователя ВК :').strip()
 
 class VKAPIClient:
-    ...
     def get_proile_photos_info(self):
         params = {
             'access_token': self.token,
@@ -36,7 +35,6 @@ class VKAPIClient:
         }
         response = requests.get(self.base_url + 'photos.get', params=params)
         return response.json()
-    ...
 
 vk_client = vk.VKAPIClient(vk_token, user_id)
 ya_client = ya.YandexDiskAPIClient(ya_token)
